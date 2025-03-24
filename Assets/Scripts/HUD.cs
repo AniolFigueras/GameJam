@@ -9,6 +9,7 @@ public class HUD : MonoBehaviour
 
     public GameObject[] vidas;
 
+    public EscudoReflector escudo;
     bool rellenar = false;
     int cooldown = 3;
     float next = 0f;
@@ -27,6 +28,7 @@ public class HUD : MonoBehaviour
         {
             GameManager.instance.Stamina -= GameManager.instance.AttackCost;
             StaminaBar.fillAmount = GameManager.instance.Stamina / GameManager.instance.MaxStamina;
+            escudo.activo = true;
             next = Time.time;
             rellenar = false;
             currTime2 = 0f;
