@@ -9,35 +9,50 @@ public class HUD : MonoBehaviour
 
     public GameObject[] vidas;
 
+    bool rellenar = false;
+    int cooldown = 3;
+    float next = 0f;
+    float currTime2 = 0f;
+    int veces = 0;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow) &&GameManager.instance.Stamina >= 20)
         {
-
             GameManager.instance.Stamina -= GameManager.instance.AttackCost;
-            if (GameManager.instance.Stamina < 0) GameManager.instance.Stamina = 0;
             StaminaBar.fillAmount = GameManager.instance.Stamina / GameManager.instance.MaxStamina;
-
-            if (GameManager.instance.recharge != null) StopCoroutine(GameManager.instance.recharge);
-            GameManager.instance.recharge = StartCoroutine(RechargeStamina());
+            next = Time.time;
+            rellenar = false;
+            currTime2 = 0f;
         }
-    }
-    private IEnumerator RechargeStamina()
-    {
-        yield return new WaitForSeconds(3f);
-        while (GameManager.instance.Stamina < GameManager.instance.MaxStamina)
+        if (GameManager.instance.Stamina < 0) GameManager.instance.Stamina = 0;
+        
+        if(Time.time >= next + cooldown && GameManager.instance.Stamina < 100)
         {
-            GameManager.instance.Stamina += GameManager.instance.ChargeRate / 20f;
-            if (GameManager.instance.Stamina > GameManager.instance.MaxStamina) GameManager.instance.Stamina = GameManager.instance.MaxStamina;
-            StaminaBar.fillAmount = GameManager.instance.Stamina / GameManager.instance.MaxStamina;
-            yield return new WaitForSeconds(.1f);
+            rellenar = true;
         }
+        if(rellenar)
+        {
+            currTime2 += Time.deltaTime;
+            if(currTime2 >= 1){
+                veces +=1;
+                currTime2 = 0f;
+                GameManager.instance.Stamina += GameManager.instance.ChargeRate;
+                StaminaBar.fillAmount = GameManager.instance.Stamina / GameManager.instance.MaxStamina;
+                if(veces >= 3)
+                {
+                    currTime2 = 0f;
+                    veces = 0;
+                    rellenar = false;
+                }
+            }
+        }        
     }
+
 }
