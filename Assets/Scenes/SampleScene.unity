@@ -822,6 +822,7 @@ MonoBehaviour:
   vidaas: 0
   maxVidas: 3
   pers: {fileID: 851774884}
+  hud: {fileID: 1560678105}
 --- !u!1 &1157020595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,7 +1396,6 @@ MonoBehaviour:
   - {fileID: 116507057}
   - {fileID: 1496855306}
   - {fileID: 1157020595}
-  life: {fileID: 0}
 --- !u!1 &1616688745
 GameObject:
   m_ObjectHideFlags: 0
