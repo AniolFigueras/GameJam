@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public float Stamina = 100, MaxStamina = 100;
     public float AttackCost = 20;
     public float ChargeRate = 20;
+    public Life life;
 
    public static GameManager instance;
 

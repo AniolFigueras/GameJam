@@ -14,6 +14,8 @@ public class MovimientoPersonaje : MonoBehaviour
 
     public Direction direction = Direction.NONE;
 
+    public Life life;
+    public GameObject pers;
     // Start is called before the first frame update
     void Start()
     {
@@ -75,6 +77,11 @@ public class MovimientoPersonaje : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGroundTouched = true;
+        }
+        if(collision.gameObject.CompareTag("Abyss")){
+            Vector2 dir = new Vector2(2,0);
+            pers.transform.position = dir;
+            life.Muerte();
         }
     }
 }
