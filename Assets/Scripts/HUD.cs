@@ -9,7 +9,7 @@ public class HUD : MonoBehaviour
 
     public GameObject[] vidas;
 
-    public EscudoReflector escudo;
+    public Habilidad escudo;
     bool rellenar = false;
     int cooldown = 3;
     float next = 0f;

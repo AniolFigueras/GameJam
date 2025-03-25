@@ -8,7 +8,6 @@ public class Proyectil : MonoBehaviour
     public float speed;
     public bool izquierda = true;
     public GameObject proyectil;
-    bool devuelve;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,15 +25,14 @@ public class Proyectil : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if(devuelve) 
-        {
-            devuelve = false;
-            rb.velocity = new Vector2(speed *(-1), rb.velocity.y);
-        }
-        
+
         Destroy(proyectil, 10);
+    }
+    public void ChangeDirection()
+    {
+        rb.velocity = new Vector2(rb.velocity.x * -1, rb.velocity.y);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -42,11 +40,6 @@ public class Proyectil : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             Destroy(proyectil);
-        }
-        if(collision.gameObject.tag == "Shield")
-        {
-            Debug.Log("Homerun!");
-            devuelve = true;
         }
     }
 

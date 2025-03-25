@@ -8,7 +8,12 @@ public class MovimientoPersonaje : MonoBehaviour
     public float jumpForce = 10f;
 
     private Rigidbody2D rb2d;
+    private SpriteRenderer spr;
+    private bool facingRight;
     private bool isGroundTouched = false;
+    public float shieldPositionX = 0;
+    private GameObject shieldObject;
+    public Habilidad hability;
     //New Movement
     float horizontal;
 
@@ -18,6 +23,11 @@ public class MovimientoPersonaje : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        spr = GetComponent<SpriteRenderer>();
+
+
+        facingRight = true;
+        shieldObject = transform.Find("Shield").gameObject;
     }
 
     // Update is called once per frame
@@ -31,13 +41,21 @@ public class MovimientoPersonaje : MonoBehaviour
         }
         if(horizontal < 0)
         {
-            rb2d.velocity = new Vector2 (speedX * horizontal, rb2d.velocity.y);
-            transform.localRotation = Quaternion.Euler(0,180,0);
+            if(!hability.activo)rb2d.velocity = new Vector2 (speedX * horizontal, rb2d.velocity.y);
+            facingRight = false;
+            spr.flipX = !facingRight;
+            Vector3 shieldPosition = shieldObject.transform.localPosition;
+            shieldPosition.x = -shieldPositionX;
+            shieldObject.transform.localPosition = shieldPosition;
         }
         if(horizontal > 0)
         {
-            rb2d.velocity = new Vector2 (speedX * horizontal, rb2d.velocity.y);
-            transform.localRotation = Quaternion.Euler(0,0,0);
+            if (!hability.activo) rb2d.velocity = new Vector2 (speedX * horizontal, rb2d.velocity.y);
+            facingRight = true;
+            spr.flipX = !facingRight;
+            Vector3 shieldPosition = shieldObject.transform.localPosition;
+            shieldPosition.x = shieldPositionX;
+            shieldObject.transform.localPosition = shieldPosition;
         }
         if(horizontal == 0)
         {
@@ -55,6 +73,13 @@ public class MovimientoPersonaje : MonoBehaviour
         if(collision.gameObject.CompareTag("Abyss")){
             Vector2 dir = new Vector2(2,0);
             pers.transform.position = dir;
+            life.Muerte();
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet") && !hability.activo)
+        {
             life.Muerte();
         }
     }

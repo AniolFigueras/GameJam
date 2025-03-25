@@ -31,10 +31,13 @@ public class AttackEnemy : MonoBehaviour
     float minCool;
     float maxCool;
 
+    float num;
+
     // Start is called before the first frame update
     void Start()
     {
-        if(rojo)
+        player = GameObject.Find("Personaje");
+        if (rojo)
         {
             minCan = 1;
             maxCan = 3;
@@ -59,53 +62,60 @@ public class AttackEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.transform.position.x > enemy.transform.position.x)
+        if (player != null) 
         {
-            proyec.izquierda = false;
-            if (player.transform.position.x < 0 && enemy.transform.position.x < 0)
+            if (player.transform.position.x > enemy.transform.position.x)
             {
-                if (Mathf.Abs(player.transform.position.x) > Mathf.Abs(enemy.transform.position.x))
+                num = 1.5f;
+                proyec.izquierda = false;
+                if (player.transform.position.x < 0 && enemy.transform.position.x < 0)
                 {
-                    proyec.izquierda = true;
+                    if (Mathf.Abs(player.transform.position.x) > Mathf.Abs(enemy.transform.position.x))
+                    {
+                        num = -1.5f;
+                        proyec.izquierda = true;
+                    }
+                }
+            }
+            else if (player.transform.position.x < enemy.transform.position.x)
+            {
+                num = -1.5f;
+                proyec.izquierda = true;
+            }
+
+
+            if (currTime == 0 && lanzados < cantidad)
+            {
+                lanzar = true;
+                lanzados++;
+            }
+            if (lanzar)
+            {
+                currTime += Time.deltaTime;
+                if (currTime >= cooldown)
+                {
+                    Vector2 direction = new Vector2(enemy.transform.position.x + num, enemy.transform.position.y);
+                    GameObject temProy = Instantiate(proy, direction, enemy.transform.rotation);
+                    currTime = 0;
+                    lanzar = false;
+                }
+            }
+            if (lanzados == cantidad && currTimeRec == 0)
+            {
+                noCool = true;
+            }
+            if (noCool)
+            {
+                currTimeRec += Time.deltaTime;
+                if (currTimeRec >= cooldownRec)
+                {
+                    noCool = false;
+                    currTimeRec = 0;
+                    lanzados = 0;
+                    cantidad = Random.Range(minCan, maxCan);
                 }
             }
         }
-        else if (player.transform.position.x < enemy.transform.position.x)
-        {
-            proyec.izquierda = true;
-        }
-
-
-        if (currTime == 0 && lanzados < cantidad)
-        {
-            lanzar = true;
-            lanzados++;
-        }
-        if(lanzar)
-        {
-            currTime += Time.deltaTime;
-            if(currTime >= cooldown)
-            {
-                Vector2 direction = new Vector2(enemy.transform.position.x, enemy.transform.position.y);
-                GameObject temProy = Instantiate(proy, direction, enemy.transform.rotation);
-                currTime = 0;
-                lanzar=false;
-            }
-        }
-        if(lanzados == cantidad && currTimeRec == 0)
-        {
-            noCool = true;
-        }
-        if(noCool)
-        {
-            currTimeRec += Time.deltaTime;
-            if(currTimeRec >= cooldownRec)
-            {
-                noCool = false;
-                currTimeRec = 0;
-                lanzados = 0;
-                cantidad = Random.Range(minCan, maxCan);
-            }
-        }
     }
+        
 }
