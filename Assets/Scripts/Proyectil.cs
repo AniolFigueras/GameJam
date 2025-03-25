@@ -31,8 +31,9 @@ public class Proyectil : MonoBehaviour
         if(devuelve) 
         {
             devuelve = false;
-            
+            rb.velocity = new Vector2(speed *(-1), rb.velocity.y);
         }
+        
         Destroy(proyectil, 10);
     }
 
