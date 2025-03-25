@@ -26,6 +26,8 @@ public class EscudoReflector : MonoBehaviour
             if(currTime >= cooldown)
             {
                 shield.gameObject.SetActive(false);
+                activo = false;
+                currTime = 0f;
             }
         }
     }

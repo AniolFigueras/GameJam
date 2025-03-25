@@ -8,6 +8,7 @@ public class Proyectil : MonoBehaviour
     public float speed;
     public bool izquierda = true;
     public GameObject proyectil;
+    bool devuelve;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +17,10 @@ public class Proyectil : MonoBehaviour
         if (izquierda) 
         {
             rb.velocity = new Vector2(speed * (-1), rb.velocity.y);
-            Debug.Log("izquierda");
         }
         if (!izquierda) 
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
-            Debug.Log("derecha");
         } 
         
     }
@@ -29,6 +28,11 @@ public class Proyectil : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(devuelve) 
+        {
+            devuelve = false;
+            
+        }
         Destroy(proyectil, 10);
     }
 
@@ -37,6 +41,11 @@ public class Proyectil : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             Destroy(proyectil);
+        }
+        if(collision.gameObject.tag == "Shield")
+        {
+            Debug.Log("Homerun!");
+            devuelve = true;
         }
     }
 
