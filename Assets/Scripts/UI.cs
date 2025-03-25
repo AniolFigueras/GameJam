@@ -1,68 +1,125 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
 public class UI : MonoBehaviour
 {
-    public GameObject menuPrin;
-    public GameObject menuHud;
-    public GameObject menuEsc;
-    public GameObject menuOptions;
-    public int men = 0;
-    public bool mainMen;
+    
+    public bool isMainMenu;
+    public int menu;
+
+    public GameObject mainMenu;
+    public GameObject hudMenu;
+    public GameObject escMenu;
+    public GameObject optionsMenu;
+    public GameObject creditsMenu;
+
+    //Options
+    public Slider musicSlider;
     // Start is called before the first frame update
     void Start()
     {
-        menuPrin.SetActive(true);
-        menuHud.SetActive(false);
-        menuEsc.SetActive(false);
-        menuOptions.SetActive(false);
-        if (mainMen) men = 2;
+        if(isMainMenu)
+        {
+            menu = 0;
+            mainMenu.gameObject.SetActive(true);
+            escMenu.gameObject.SetActive(false);
+            optionsMenu.gameObject.SetActive(false);
+            hudMenu.gameObject.SetActive(false);
+            creditsMenu.gameObject.SetActive(false);
+        }
+        else
+        {
+            menu = 3;
+            mainMenu.gameObject.SetActive(false);
+            escMenu.gameObject.SetActive(false);
+            optionsMenu.gameObject.SetActive(false);
+            hudMenu.gameObject.SetActive(true);
+            creditsMenu.gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if(men == 0){
+        if(Input.GetKeyDown(KeyCode.Escape) && !isMainMenu){
+            menu = 1;
+        }
+        if (menu == 0)
+        {
+            //Menu home
+            mainMenu.gameObject.SetActive(true);
+            escMenu.gameObject.SetActive(false);
+            optionsMenu.gameObject.SetActive(false);
+            hudMenu.gameObject.SetActive(false);
+            creditsMenu.gameObject.SetActive(false);
+            Time.timeScale = 0;
+        }
+        else if (menu == 1)
+        {
+            //EscMenu
+            mainMenu.gameObject.SetActive(false);
+            escMenu.gameObject.SetActive(true);
+            optionsMenu.gameObject.SetActive(false);
+            hudMenu.gameObject.SetActive(false);
+            creditsMenu.gameObject.SetActive(false);
+            Time.timeScale = 0;
+        }
+        else if (menu == 2)
+        {
+            //OptionsMenu
+            mainMenu.gameObject.SetActive(false);
+            escMenu.gameObject.SetActive(false);
+            optionsMenu.gameObject.SetActive(true);
+            hudMenu.gameObject.SetActive(false);
+            creditsMenu.gameObject.SetActive(false);
+            AudioListener.volume = musicSlider.value;
+            Time.timeScale = 0;
+        }
+        else if (menu == 3)
+        {
             //HUD
-            menuHud.SetActive(true);
-            menuEsc.SetActive(false);
-            menuOptions.SetActive(false);
-            menuPrin.SetActive(false);
+            mainMenu.gameObject.SetActive(false);
+            escMenu.gameObject.SetActive(false);
+            optionsMenu.gameObject.SetActive(false);
+            hudMenu.gameObject.SetActive(true);
+            creditsMenu.gameObject.SetActive(false);
+            Time.timeScale = 1;
         }
-        else if(men == 1)
+        else if (menu == 4)
         {
-            menuHud.SetActive(false);
-            menuEsc.SetActive(true);
-            menuOptions.SetActive(false);
-            menuPrin.SetActive(false);
+            mainMenu.gameObject.SetActive(false);
+            escMenu.gameObject.SetActive(false);
+            optionsMenu.gameObject.SetActive(false);
+            hudMenu.gameObject.SetActive(false);
+            creditsMenu.gameObject.SetActive(true);
         }
-        else if (men == 2)
-        {
-            menuHud.SetActive(false);
-            menuEsc.SetActive(false);
-            menuOptions.SetActive(false);
-            menuPrin.SetActive(true);
-        }
-    }
-    public void Resumen()
-    {
-        men = 0;   
     }
 
-    public void Esc()
+    public void Iniciar()
     {
-        men = 3;
+        SceneManager.LoadScene(1);
+    }
+
+    public void Opciones()
+    {
+        menu = 2;
+    }
+
+    public void Credits()
+    {
+        menu = 4;
     }
     public void Salir()
     {
         Application.Quit();
     }
-    public void Iniciar()
+
+    public void Resume()
     {
-        SceneManager.LoadScene("SampleScene");
+        menu = 3;
     }
 }
