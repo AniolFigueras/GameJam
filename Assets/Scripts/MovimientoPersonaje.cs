@@ -10,7 +10,7 @@ public class MovimientoPersonaje : MonoBehaviour
     private Rigidbody2D rb2d;
     private SpriteRenderer spr;
     private bool facingRight;
-    private bool isGroundTouched = false;
+    public bool isGroundTouched = false;
     public float shieldPositionX = 0;
     private GameObject shieldObject;
     public Habilidad hability;
@@ -50,7 +50,7 @@ public class MovimientoPersonaje : MonoBehaviour
         }
         if(horizontal > 0)
         {
-            if (!hability.activo) rb2d.velocity = new Vector2 (speedX * horizontal, rb2d.velocity.y);
+            if(!hability.activo)rb2d.velocity = new Vector2 (speedX * horizontal, rb2d.velocity.y);
             facingRight = true;
             spr.flipX = !facingRight;
             Vector3 shieldPosition = shieldObject.transform.localPosition;
@@ -60,6 +60,11 @@ public class MovimientoPersonaje : MonoBehaviour
         if(horizontal == 0)
         {
             rb2d.velocity = new Vector2(horizontal *0, rb2d.velocity.y);
+        }
+        if (hability.activoSalto)
+        {
+            Vector2 dir = new Vector2(0f, 100000f);
+            rb2d.AddForce(dir);
         }
     }
 
@@ -82,12 +87,26 @@ public class MovimientoPersonaje : MonoBehaviour
         {
             life.Muerte();
         }
+        if (collision.gameObject.CompareTag("ShieldSalto"))
+        {
+            Vector2 dir = new Vector2(0f, 100f);
+            rb2d.AddForce(dir);
+            Debug.Log("AAAAAAAAAAAAA");
+            hability.activoSalto = false;
+        }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Ground"))
         {
             isGroundTouched = false;
+        }
+        else if (collision.gameObject.CompareTag("ShieldSalto"))
+        {
+            Vector2 dir = new Vector2(0f, 100f);
+            rb2d.AddForce(dir);
+            Debug.Log("AAAAAAAAAAAAA");
+            hability.activoSalto = false;
         }
     }
 }

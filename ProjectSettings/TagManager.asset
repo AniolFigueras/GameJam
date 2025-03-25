@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - Abyss
   - Shield
+  - ShieldSalto
   layers:
   - Default
   - TransparentFX

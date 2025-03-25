@@ -15,6 +15,7 @@ public class HUD : MonoBehaviour
     float next = 0f;
     float currTime2 = 0f;
     int veces = 0;
+    public MovimientoPersonaje mov;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,15 @@ public class HUD : MonoBehaviour
             next = Time.time;
             rellenar = false;
             currTime2 = 0f;
+        }
+        if (escudo.activo && Input.GetKeyDown(KeyCode.UpArrow) && GameManager.instance.Stamina >= 20)
+        {
+               escudo.activoSalto = true;
+               GameManager.instance.Stamina -= GameManager.instance.AttackCost;
+               StaminaBar.fillAmount = GameManager.instance.Stamina / GameManager.instance.MaxStamina;
+               next = Time.time;
+               rellenar = false;
+               currTime2 = 0f; 
         }
         if (GameManager.instance.Stamina < 0) GameManager.instance.Stamina = 0;
         
