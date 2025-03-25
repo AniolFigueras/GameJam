@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Life : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class Life : MonoBehaviour
         if (hud.sinVidas[vidaas] != null) hud.sinVidas[vidaas].enabled = true;
         if(vidaas == 0){
             Destroy(pers);
-            Time.timeScale = 0.0f;
+            SceneManager.LoadScene(0);
         }
     }
 }

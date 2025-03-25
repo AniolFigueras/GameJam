@@ -41,6 +41,15 @@ public class Proyectil : MonoBehaviour
         {
             Destroy(proyectil);
         }
+        if(collision.gameObject.tag == "Enemy")
+        {
+            Destroy(proyectil);
+        }
+
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
     }
 
 }

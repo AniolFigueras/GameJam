@@ -131,13 +131,21 @@ public class UI : MonoBehaviour
     }
     public void Return2()
     {
-        menu = 2;
+        if(isMainMenu)
+        {
+            menu = 0;
+        }
+        else
+        {
+            menu = 2;
+        }
     }
 
     public void Resume()
     {
         menu = 3;
     }
+
     public void ExitGame()
     {
         SceneManager.LoadScene(0);

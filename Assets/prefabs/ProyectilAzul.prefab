@@ -162,6 +162,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 9084005183376784759}
-  speed: 10
+  speed: 15
   izquierda: 0
   proyectil: {fileID: 7512438665557384710}

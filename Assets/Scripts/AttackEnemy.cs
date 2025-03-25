@@ -44,7 +44,7 @@ public class AttackEnemy : MonoBehaviour
             minCool = 0.2f;
             maxCool = 0.5f;
             cantidad = Random.Range(minCan, maxCan);
-            cooldownRec = 6f;
+            cooldownRec = 3f;
             cooldown = Random.Range(minCool, maxCool);
         }
         else if(azul)
@@ -54,7 +54,7 @@ public class AttackEnemy : MonoBehaviour
             minCool = 1f;
             maxCool = 3f;
             cantidad = Random.Range(minCan, maxCan);
-            cooldownRec = 8f;
+            cooldownRec = 5f;
             cooldown = Random.Range(minCool, maxCool);
         }
     }
