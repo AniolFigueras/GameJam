@@ -7,14 +7,12 @@ public class Habilidad : MonoBehaviour
 {
     public bool activo;
     public GameObject escudo;
-    public GameObject escudo1;
     float cooldown = 2;
     float currTime = 0f;
     // Start is called before the first frame update
     void Start()
     {
         escudo.gameObject.SetActive(false);
-        escudo1.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
