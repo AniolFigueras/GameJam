@@ -61,11 +61,6 @@ public class MovimientoPersonaje : MonoBehaviour
         {
             rb2d.velocity = new Vector2(horizontal *0, rb2d.velocity.y);
         }
-        if (hability.activoSalto)
-        {
-            Vector2 dir = new Vector2(0f, 100000f);
-            rb2d.AddForce(dir);
-        }
     }
 
 
@@ -87,26 +82,12 @@ public class MovimientoPersonaje : MonoBehaviour
         {
             life.Muerte();
         }
-        if (collision.gameObject.CompareTag("ShieldSalto"))
-        {
-            Vector2 dir = new Vector2(0f, 100f);
-            rb2d.AddForce(dir);
-            Debug.Log("AAAAAAAAAAAAA");
-            hability.activoSalto = false;
-        }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Ground"))
         {
             isGroundTouched = false;
-        }
-        else if (collision.gameObject.CompareTag("ShieldSalto"))
-        {
-            Vector2 dir = new Vector2(0f, 100f);
-            rb2d.AddForce(dir);
-            Debug.Log("AAAAAAAAAAAAA");
-            hability.activoSalto = false;
         }
     }
 }

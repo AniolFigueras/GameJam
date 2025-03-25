@@ -10,9 +10,6 @@ public class Habilidad : MonoBehaviour
     public GameObject escudo1;
     float cooldown = 2;
     float currTime = 0f;
-    public bool activoSalto;
-    float cooldown2 = 0.01f;
-    public float currTime2 = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,17 +31,5 @@ public class Habilidad : MonoBehaviour
                 currTime = 0f;
             }
         }
-        if(activoSalto)
-        {
-            escudo1.gameObject.SetActive(true);
-            currTime2 += Time.deltaTime;
-            if(currTime2 >= cooldown2)
-            {
-                escudo1.gameObject.SetActive(false);
-                activoSalto = false;
-                currTime2 = 0f;
-            }
-        }
-
     }
 }
