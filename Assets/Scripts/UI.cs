@@ -118,8 +118,28 @@ public class UI : MonoBehaviour
         Application.Quit();
     }
 
+    public void Return()
+    {
+        if(isMainMenu)
+        {
+            menu = 0;
+        }
+        else
+        {
+            menu = 1;
+        }
+    }
+    public void Return2()
+    {
+        menu = 2;
+    }
+
     public void Resume()
     {
         menu = 3;
+    }
+    public void ExitGame()
+    {
+        SceneManager.LoadScene(0);
     }
 }

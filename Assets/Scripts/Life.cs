@@ -21,7 +21,8 @@ public class Life : MonoBehaviour
     }
     public void Muerte(){
         vidaas--;
-        if (hud.vidas[vidaas] != null) hud.vidas[vidaas].SetActive(false);
+        if (hud.vidas[vidaas] != null) hud.vidas[vidaas].enabled = false;
+        if (hud.sinVidas[vidaas] != null) hud.sinVidas[vidaas].enabled = true;
         if(vidaas == 0){
             Destroy(pers);
             Time.timeScale = 0.0f;
