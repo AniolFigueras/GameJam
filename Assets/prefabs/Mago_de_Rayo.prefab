@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3619907577160935794}
   m_Layer: 0
   m_Name: Mago_de_Rayo
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

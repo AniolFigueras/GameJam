@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3137534727300430864}
   m_Layer: 0
   m_Name: Mago_fuego
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,6 +200,7 @@ MonoBehaviour:
   proyec: {fileID: 2032022621628309936, guid: d2e8e3b13ec2b2c488fff9eb6fa0ba44, type: 3}
   rojo: 1
   azul: 0
+  morado: 0
   cantidad: 0
 --- !u!114 &3137534727300430864
 MonoBehaviour:

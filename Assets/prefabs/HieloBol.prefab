@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8658301494128524075}
   m_Layer: 0
   m_Name: HieloBol
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,5 +185,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 6545744195646902748}
   speed: 15
-  izquierda: 0
+  izquierda: 1
   proyectil: {fileID: 2133403470723382787}

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2791364274500185552}
   m_Layer: 0
   m_Name: Mago_Hielo
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -214,4 +214,5 @@ MonoBehaviour:
   proyec: {fileID: 8658301494128524075, guid: d56275df832a48d48934e10895c1c71d, type: 3}
   rojo: 0
   azul: 1
+  morado: 0
   cantidad: 0

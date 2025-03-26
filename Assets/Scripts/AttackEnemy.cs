@@ -37,7 +37,6 @@ public class AttackEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Personaje");
         if (rojo)
         {
             minCan = 1;
