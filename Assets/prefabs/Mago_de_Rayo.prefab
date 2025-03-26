@@ -196,13 +196,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   proy: {fileID: 9121395195865631495, guid: 84dd37a4034fe0b42a4c9c464831ddfc, type: 3}
   enemy: {fileID: 6477136947058889850}
-  player: {fileID: 0}
+  jugador: {fileID: 0}
   proyec: {fileID: 4867099462089441657, guid: 84dd37a4034fe0b42a4c9c464831ddfc, type: 3}
   rojo: 0
   azul: 0
   morado: 1
   cantidad: 0
   spr: {fileID: 635150339054031172}
+  detectionRadius: 20
+  player: {fileID: 0}
 --- !u!114 &3619907577160935794
 MonoBehaviour:
   m_ObjectHideFlags: 0

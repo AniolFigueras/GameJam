@@ -10,6 +10,7 @@ TagManager:
   - Shield
   - ShieldSalto
   - Enemy
+  - Corona
   layers:
   - Default
   - TransparentFX

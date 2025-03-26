@@ -192,6 +192,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2791364274500185552, guid: 58b808bbd1191854e9a90c6352b139bf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1570290968}
+    - target: {fileID: 2791364274500185552, guid: 58b808bbd1191854e9a90c6352b139bf, type: 3}
+      propertyPath: detectionRadius
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8417563815459777279, guid: 58b808bbd1191854e9a90c6352b139bf, type: 3}
       propertyPath: m_Name
       value: Mago_Hielo (2)
@@ -304,6 +312,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mago_fuego
       objectReference: {fileID: 0}
+    - target: {fileID: 3890159153705984486, guid: ffad3e5dcddd2a843978854f35be80dc, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1570290968}
+    - target: {fileID: 3890159153705984486, guid: ffad3e5dcddd2a843978854f35be80dc, type: 3}
+      propertyPath: detectionRadius
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5252983052770359709, guid: ffad3e5dcddd2a843978854f35be80dc, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -361,6 +377,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 727923424161968693, guid: ce5ea079d42588c4293ef9028e9090cb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1570290968}
+    - target: {fileID: 727923424161968693, guid: ce5ea079d42588c4293ef9028e9090cb, type: 3}
+      propertyPath: detectionRadius
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6477136947058889850, guid: ce5ea079d42588c4293ef9028e9090cb, type: 3}
       propertyPath: m_Name
       value: Mago_de_Rayo (2)
@@ -422,6 +446,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 727923424161968693, guid: ce5ea079d42588c4293ef9028e9090cb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1570290968}
+    - target: {fileID: 727923424161968693, guid: ce5ea079d42588c4293ef9028e9090cb, type: 3}
+      propertyPath: detectionRadius
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6477136947058889850, guid: ce5ea079d42588c4293ef9028e9090cb, type: 3}
       propertyPath: m_Name
       value: Mago_de_Rayo
@@ -475,11 +507,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce5ea079d42588c4293ef9028e9090cb, type: 3}
---- !u!1 &1013274946 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 99436253327620846, guid: 4b854e68bcdcf274d9eac4dcbd79b27b, type: 3}
-  m_PrefabInstance: {fileID: 6737273898469894030}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1074875850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -488,6 +515,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2791364274500185552, guid: 58b808bbd1191854e9a90c6352b139bf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1570290968}
+    - target: {fileID: 2791364274500185552, guid: 58b808bbd1191854e9a90c6352b139bf, type: 3}
+      propertyPath: detectionRadius
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8417563815459777279, guid: 58b808bbd1191854e9a90c6352b139bf, type: 3}
       propertyPath: m_Name
       value: Mago_Hielo (1)
@@ -8900,7 +8935,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8265019042810712153, guid: 4b854e68bcdcf274d9eac4dcbd79b27b, type: 3}
   m_PrefabInstance: {fileID: 6737273898469894030}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1013274946}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2bcb0fafd20364e48983ec91a01c799b, type: 3}
@@ -8911,12 +8946,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8671522763825615490, guid: 4b854e68bcdcf274d9eac4dcbd79b27b, type: 3}
   m_PrefabInstance: {fileID: 6737273898469894030}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1013274946}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c76a4fe732fb3a849ae61df4123b6966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1570290968 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2584292908773518740, guid: 4b854e68bcdcf274d9eac4dcbd79b27b, type: 3}
+  m_PrefabInstance: {fileID: 6737273898469894030}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1606751475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8925,6 +8965,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 727923424161968693, guid: ce5ea079d42588c4293ef9028e9090cb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1570290968}
+    - target: {fileID: 727923424161968693, guid: ce5ea079d42588c4293ef9028e9090cb, type: 3}
+      propertyPath: detectionRadius
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6477136947058889850, guid: ce5ea079d42588c4293ef9028e9090cb, type: 3}
       propertyPath: m_Name
       value: Mago_de_Rayo (1)
@@ -8986,29 +9034,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1328855762040855063, guid: 8474245dc4cef104abf748d48bab9aa5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1513023923076352106, guid: 8474245dc4cef104abf748d48bab9aa5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2078832928971804008, guid: 8474245dc4cef104abf748d48bab9aa5, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 2165039238324840095, guid: 8474245dc4cef104abf748d48bab9aa5, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2488801743611087056, guid: 8474245dc4cef104abf748d48bab9aa5, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 20.099976
-      objectReference: {fileID: 0}
-    - target: {fileID: 2488801743611087056, guid: 8474245dc4cef104abf748d48bab9aa5, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -52.625
       objectReference: {fileID: 0}
     - target: {fileID: 2631780943624826497, guid: 8474245dc4cef104abf748d48bab9aa5, type: 3}
       propertyPath: m_Pivot.x
@@ -9094,18 +9122,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3555435770803883686, guid: 8474245dc4cef104abf748d48bab9aa5, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 20.099976
-      objectReference: {fileID: 0}
-    - target: {fileID: 3555435770803883686, guid: 8474245dc4cef104abf748d48bab9aa5, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -120.650024
-      objectReference: {fileID: 0}
-    - target: {fileID: 5947189251785392793, guid: 8474245dc4cef104abf748d48bab9aa5, type: 3}
-      propertyPath: mainMenu
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6125098061866920813, guid: 8474245dc4cef104abf748d48bab9aa5, type: 3}
       propertyPath: mov
       value: 
@@ -9118,14 +9134,6 @@ PrefabInstance:
       propertyPath: escudo
       value: 
       objectReference: {fileID: 1570290959}
-    - target: {fileID: 8137532372423726216, guid: 8474245dc4cef104abf748d48bab9aa5, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 19.900146
-      objectReference: {fileID: 0}
-    - target: {fileID: 8137532372423726216, guid: 8474245dc4cef104abf748d48bab9aa5, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -178.15002
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9161,7 +9169,11 @@ PrefabInstance:
     - target: {fileID: 2791364274500185552, guid: 58b808bbd1191854e9a90c6352b139bf, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1013274946}
+      objectReference: {fileID: 1570290968}
+    - target: {fileID: 2791364274500185552, guid: 58b808bbd1191854e9a90c6352b139bf, type: 3}
+      propertyPath: detectionRadius
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8417563815459777279, guid: 58b808bbd1191854e9a90c6352b139bf, type: 3}
       propertyPath: m_Name
       value: Mago_Hielo
