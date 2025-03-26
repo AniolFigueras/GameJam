@@ -15,7 +15,6 @@ public class UI : MonoBehaviour
     public GameObject hudMenu;
     public GameObject escMenu;
     public GameObject optionsMenu;
-    public GameObject creditsMenu;
 
     //Options
     public Slider musicSlider;
@@ -29,7 +28,6 @@ public class UI : MonoBehaviour
             escMenu.gameObject.SetActive(false);
             optionsMenu.gameObject.SetActive(false);
             hudMenu.gameObject.SetActive(false);
-            creditsMenu.gameObject.SetActive(false);
         }
         else
         {
@@ -38,7 +36,6 @@ public class UI : MonoBehaviour
             escMenu.gameObject.SetActive(false);
             optionsMenu.gameObject.SetActive(false);
             hudMenu.gameObject.SetActive(true);
-            creditsMenu.gameObject.SetActive(false);
         }
     }
 
@@ -55,7 +52,6 @@ public class UI : MonoBehaviour
             escMenu.gameObject.SetActive(false);
             optionsMenu.gameObject.SetActive(false);
             hudMenu.gameObject.SetActive(false);
-            creditsMenu.gameObject.SetActive(false);
             Time.timeScale = 0;
         }
         else if (menu == 1)
@@ -65,7 +61,6 @@ public class UI : MonoBehaviour
             escMenu.gameObject.SetActive(true);
             optionsMenu.gameObject.SetActive(false);
             hudMenu.gameObject.SetActive(false);
-            creditsMenu.gameObject.SetActive(false);
             Time.timeScale = 0;
         }
         else if (menu == 2)
@@ -75,7 +70,6 @@ public class UI : MonoBehaviour
             escMenu.gameObject.SetActive(false);
             optionsMenu.gameObject.SetActive(true);
             hudMenu.gameObject.SetActive(false);
-            creditsMenu.gameObject.SetActive(false);
             AudioListener.volume = musicSlider.value;
             Time.timeScale = 0;
         }
@@ -86,7 +80,6 @@ public class UI : MonoBehaviour
             escMenu.gameObject.SetActive(false);
             optionsMenu.gameObject.SetActive(false);
             hudMenu.gameObject.SetActive(true);
-            creditsMenu.gameObject.SetActive(false);
             Time.timeScale = 1;
         }
         else if (menu == 4)
@@ -95,7 +88,6 @@ public class UI : MonoBehaviour
             escMenu.gameObject.SetActive(false);
             optionsMenu.gameObject.SetActive(false);
             hudMenu.gameObject.SetActive(false);
-            creditsMenu.gameObject.SetActive(true);
         }
     }
 
@@ -107,11 +99,6 @@ public class UI : MonoBehaviour
     public void Opciones()
     {
         menu = 2;
-    }
-
-    public void Credits()
-    {
-        menu = 4;
     }
     public void Salir()
     {

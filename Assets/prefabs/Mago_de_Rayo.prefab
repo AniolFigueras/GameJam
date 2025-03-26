@@ -202,6 +202,7 @@ MonoBehaviour:
   azul: 0
   morado: 1
   cantidad: 0
+  spr: {fileID: 635150339054031172}
 --- !u!114 &3619907577160935794
 MonoBehaviour:
   m_ObjectHideFlags: 0

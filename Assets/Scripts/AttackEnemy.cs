@@ -33,7 +33,8 @@ public class AttackEnemy : MonoBehaviour
     float maxCool;
 
     float num;
-
+    private bool facingRight;
+    public SpriteRenderer spr;
     // Start is called before the first frame update
     void Start()
     {
@@ -80,11 +81,15 @@ public class AttackEnemy : MonoBehaviour
             {
                 num = 1.5f;
                 proyec.izquierda = false;
+                facingRight = true;
+                spr.flipX = !facingRight;
                 if (player.transform.position.x < 0 && enemy.transform.position.x < 0)
                 {
                     if (Mathf.Abs(player.transform.position.x) > Mathf.Abs(enemy.transform.position.x))
                     {
                         num = -1.5f;
+                        facingRight = false;
+                        spr.flipX = !facingRight;
                         proyec.izquierda = true;
                     }
                 }
@@ -92,6 +97,8 @@ public class AttackEnemy : MonoBehaviour
             else if (player.transform.position.x < enemy.transform.position.x)
             {
                 num = -1.5f;
+                facingRight = false;
+                spr.flipX = !facingRight;
                 proyec.izquierda = true;
             }
 

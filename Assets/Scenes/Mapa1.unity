@@ -231,6 +231,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &403405957 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4622840880215534936, guid: 58b808bbd1191854e9a90c6352b139bf, type: 3}
+  m_PrefabInstance: {fileID: 1764277177}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1013274946 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 99436253327620846, guid: 4b854e68bcdcf274d9eac4dcbd79b27b, type: 3}
@@ -8708,17 +8713,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4232248688218338173, guid: 8474245dc4cef104abf748d48bab9aa5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5947189251785392793, guid: 8474245dc4cef104abf748d48bab9aa5, type: 3}
-      propertyPath: menu
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5947189251785392793, guid: 8474245dc4cef104abf748d48bab9aa5, type: 3}
-      propertyPath: isMainMenu
-      value: 0
+      propertyPath: creditsMenu
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6125098061866920813, guid: 8474245dc4cef104abf748d48bab9aa5, type: 3}
       propertyPath: mov
@@ -8756,6 +8753,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2791364274500185552, guid: 58b808bbd1191854e9a90c6352b139bf, type: 3}
+      propertyPath: spr
+      value: 
+      objectReference: {fileID: 403405957}
     - target: {fileID: 2791364274500185552, guid: 58b808bbd1191854e9a90c6352b139bf, type: 3}
       propertyPath: player
       value: 
