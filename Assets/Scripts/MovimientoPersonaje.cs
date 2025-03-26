@@ -14,9 +14,9 @@ public class MovimientoPersonaje : MonoBehaviour
     public float shieldPositionX = 0;
     private GameObject shieldObject;
     public Habilidad hability;
-    //New Movement
     float horizontal;
 
+    public Animator anim;
     public Life life;
     public GameObject pers;
     // Start is called before the first frame update
@@ -24,7 +24,6 @@ public class MovimientoPersonaje : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         spr = GetComponent<SpriteRenderer>();
-
 
         facingRight = true;
         shieldObject = transform.Find("Shield").gameObject;
@@ -36,7 +35,7 @@ public class MovimientoPersonaje : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         if(Input.GetKey(KeyCode.UpArrow) && isGroundTouched){
             rb2d.velocity = new Vector2 (0.0f, jumpForce);
-            
+            anim.SetTrigger("Jump");
             isGroundTouched = false;
         }
         if(horizontal < 0)
@@ -47,6 +46,7 @@ public class MovimientoPersonaje : MonoBehaviour
             Vector3 shieldPosition = shieldObject.transform.localPosition;
             shieldPosition.x = -shieldPositionX;
             shieldObject.transform.localPosition = shieldPosition;
+            anim.SetBool("isRunning", true);
         }
         if(horizontal > 0)
         {
@@ -56,6 +56,7 @@ public class MovimientoPersonaje : MonoBehaviour
             Vector3 shieldPosition = shieldObject.transform.localPosition;
             shieldPosition.x = shieldPositionX;
             shieldObject.transform.localPosition = shieldPosition;
+            anim.SetBool("isRunning", true);
         }
         if(horizontal == 0)
         {

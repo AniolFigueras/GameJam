@@ -21,6 +21,7 @@ public class AttackEnemy : MonoBehaviour
     //Variaciones enemigos
     public bool rojo;
     public bool azul;
+    public bool morado;
     float cooldown;
     float cooldownRec;
     public int cantidad;
@@ -55,6 +56,17 @@ public class AttackEnemy : MonoBehaviour
             maxCool = 3f;
             cantidad = Random.Range(minCan, maxCan);
             cooldownRec = 5f;
+            cooldown = Random.Range(minCool, maxCool);
+        }
+
+        else if(morado)
+        {
+            minCan = 2;
+            maxCan = 4;
+            minCool = 0.7f;
+            maxCool = 1.5f;
+            cantidad = Random.Range(minCan, maxCan);
+            cooldownRec = 7f;
             cooldown = Random.Range(minCool, maxCool);
         }
     }
