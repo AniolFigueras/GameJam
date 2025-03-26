@@ -82,13 +82,13 @@ public class AttackEnemy : MonoBehaviour
         float distancePlayer = Vector2.Distance(transform.position, player.position);
         if (distancePlayer < detectionRadius)
         {
-            if (player != null)
+            if (player != null && jugador !=null)
             {
                 if (player.transform.position.x > enemy.transform.position.x)
                 {
                     num = 1.5f;
                     proyec.izquierda = false;
-                    facingRight = true;
+                    facingRight = false;
                     spr.flipX = !facingRight;
 
                     if (player.transform.position.x < 0 && enemy.transform.position.x < 0)
@@ -103,7 +103,7 @@ public class AttackEnemy : MonoBehaviour
                 else if (player.transform.position.x < enemy.transform.position.x)
                 {
                     num = -1.5f;
-                    facingRight = false;
+                    facingRight = true;
                     spr.flipX = !facingRight;
                     proyec.izquierda = true;
                 }
