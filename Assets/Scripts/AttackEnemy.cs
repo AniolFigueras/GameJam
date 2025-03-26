@@ -83,13 +83,12 @@ public class AttackEnemy : MonoBehaviour
                 proyec.izquierda = false;
                 facingRight = true;
                 spr.flipX = !facingRight;
+
                 if (player.transform.position.x < 0 && enemy.transform.position.x < 0)
                 {
                     if (Mathf.Abs(player.transform.position.x) > Mathf.Abs(enemy.transform.position.x))
                     {
                         num = -1.5f;
-                        facingRight = false;
-                        spr.flipX = !facingRight;
                         proyec.izquierda = true;
                     }
                 }
